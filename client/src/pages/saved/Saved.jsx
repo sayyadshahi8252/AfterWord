@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./saved.module.css"
-import Leftbar from '../../components/leftbar/leftbar'
+import Leftbar from '../../components/leftbar/Leftbar'
 import Rightbar from '../../components/rightbar/Rightbar'
 import SavedCenter from '../../components/savedcenter/SavedCenter'
 
