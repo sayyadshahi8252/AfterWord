@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ExploreDesktop.module.css'
-import Leftbar from '../../components/leftbar/leftbar'
+import Leftbar from '../../components/leftbar/Leftbar'
 import Rightbar from '../../components/rightbar/Rightbar'
 import Explorecenter from '../../components/ExploreCenter/Explorecenter'
 import { useSelector } from 'react-redux'

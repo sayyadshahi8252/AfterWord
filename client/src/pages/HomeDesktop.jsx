@@ -1,5 +1,5 @@
 import React from 'react'
-import Leftbar from '../components/leftbar/leftbar'
+import Leftbar from '../components/leftbar/Leftbar'
 import styles from './HomeDesktop.module.css'
 import Center from '../components/center/Center'
 import Rightbar from '../components/rightbar/Rightbar'
