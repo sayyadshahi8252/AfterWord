@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './HeaderMobile.module.css';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/Logo.png';
 import searchicon from '../../assets/images/find.png';
 import bellicon from '../../assets/images/bell.png';
 import profileImg from '../../assets/images/profile (1).png';
