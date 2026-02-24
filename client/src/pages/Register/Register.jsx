@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Register.module.css';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/Logo.png';
 import defaultAvatar from '../../assets/images/profile (1).png'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { registeruser } from '../../Redux/userSlice/userSlice';
