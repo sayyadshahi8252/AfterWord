@@ -88,9 +88,9 @@ const dataSlice = createSlice({
       .addCase(fetchurl.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = false;
-
+    
         const { items, startIndex } = action.payload;
-
+console.log("FICTION PAYLOAD:", action.payload);
         if (startIndex === 0) {
           // Fresh load
           state.data = items;
