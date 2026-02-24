@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+const baseurl = import.meta.env.VITE_BASE_URL;
 /* ========================================
    FETCH COMMENTS (Pagination)
 ======================================== */
@@ -8,7 +8,7 @@ export const fetchComments = createAsyncThunk(
   async ({ reviewId, page = 1 }, { rejectWithValue }) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/comments/${reviewId}?page=${page}&limit=5`
+        `${baseurl}/api/comments/${reviewId}?page=${page}&limit=5`
       );
 
       const data = await res.json();
@@ -29,7 +29,7 @@ export const addComment = createAsyncThunk(
   async ({ reviewId, userId, text, parentComment }, { rejectWithValue }) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/comments/${reviewId}`,
+        `${baseurl}/api/comments/${reviewId}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -55,7 +55,7 @@ export const fetchReplies = createAsyncThunk(
   async (commentId, { rejectWithValue }) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/comments/replies/${commentId}`
+        `${baseurl}/api/comments/replies/${commentId}`
       );
 
       const data = await res.json();
@@ -76,7 +76,7 @@ export const toggleCommentLike = createAsyncThunk(
   async ({ commentId, userId }, { rejectWithValue }) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/comments/like/${commentId}`,
+        `${baseurl}/api/comments/like/${commentId}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },

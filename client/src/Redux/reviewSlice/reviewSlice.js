@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+const baseurl = import.meta.env.VITE_BASE_URL;
 // Async thunk to post a review
 export const reviewpost = createAsyncThunk(
     "reviews/reviewpost",
     async (reviewData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/post/reviewpost`, {
+            const response = await fetch(`${baseurl}/api/post/reviewpost`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export const postprivate = createAsyncThunk(
     "reviews/postprivate",
     async ({ userId, bookid }, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/post/postprivate`, {
+            const response = await fetch(`${baseurl}/api/post/postprivate`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export const fetchAllPost = createAsyncThunk(
     "reviews/fetchAllPost",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/post/fetchpost`, {
+            const response = await fetch(`${baseurl}/api/post/fetchpost`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -84,7 +84,7 @@ export const toggleLike = createAsyncThunk(
             console.log("Sending Like:", reviewId, userId);
 
             const response = await fetch(
-                `http://localhost:3000/api/post/togglelike/${reviewId}`,
+                `${baseurl}/api/post/togglelike/${reviewId}`,
                 {
                     method: "PATCH",
                     headers: { "Content-Type": "application/json" },
@@ -114,7 +114,7 @@ export const toggleSavePost = createAsyncThunk(
     async ({ reviewId, userId }, { rejectWithValue }) => {
 
         try {
-            const response = await fetch(`http://localhost:3000/api/post/save-post`, {
+            const response = await fetch(`${baseurl}/api/post/save-post`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ reviewId, userId }),
@@ -133,7 +133,7 @@ export const toggleSavePost = createAsyncThunk(
 
 export const fetchbookmarkpost = createAsyncThunk("reviews/fetchbookmarkpost", async (userId, { rejectWithValue }) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/post/bookmark/${userId}`)
+        const response = await fetch(`${baseurl}/api/post/bookmark/${userId}`)
         const data = await response.json();
         if (!response.ok) return rejectWithValue(data.message);
         return data
@@ -144,7 +144,7 @@ export const fetchbookmarkpost = createAsyncThunk("reviews/fetchbookmarkpost", a
 
 export const deletebookmark=createAsyncThunk("reviews/deletebookmark",async({userId,bookId},{rejectWithValue})=>{
         try {
-        const response = await fetch(`http://localhost:3000/api/post/removeparticularbookmark/${userId}/${bookId}`,{
+        const response = await fetch(`${baseurl}/api/post/removeparticularbookmark/${userId}/${bookId}`,{
             method:"DELETE"
         })
         const data = await response.json();

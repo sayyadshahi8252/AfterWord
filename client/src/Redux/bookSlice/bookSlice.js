@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+const baseurl = import.meta.env.VITE_BASE_URL;
 
 // Async thunk to send book data to the backend
 export const addToWatchlist = createAsyncThunk(
@@ -6,7 +7,7 @@ export const addToWatchlist = createAsyncThunk(
     async (data, { rejectWithValue }) => {
         try {
             console.log("Sending request...");
-            const response = await fetch(`http://localhost:3000/api/book/watchlist`, {
+            const response = await fetch(`${baseurl}/api/book/watchlist`, {
                 method: "POST", // Fixed typo: 'mathod' -> 'method'
                 headers: {
                     "Content-Type": "application/json"
@@ -32,7 +33,7 @@ export const currentlyreading = createAsyncThunk(
     async (id, { rejectWithValue }) => {
         try {
             const response = await fetch(
-                `http://localhost:3000/api/book/currentlyreading/${id}`
+                `${baseurl}/api/book/currentlyreading/${id}`
             );
 
             if (!response.ok) {
@@ -51,7 +52,7 @@ export const readingcurrently = createAsyncThunk(
     async (bookid, { rejectWithValue }) => {
         console.log(bookid)
         try {
-            const response = await fetch(`http://localhost:3000/api/book/reading`, {
+            const response = await fetch(`${baseurl}/api/book/reading`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ bookid })
@@ -72,7 +73,7 @@ export const currentlyReadingBook = createAsyncThunk(
     "books/currentlyReadingBook",
     async (id, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/book/currently-reading/${id}`);
+            const response = await fetch(`${baseurl}/api/book/currently-reading/${id}`);
 
             if (!response.ok) {
                 const errorData = await response.json();
@@ -90,7 +91,7 @@ export const updateBookProgress = createAsyncThunk(
     "books/updateBookProgress",
     async ({ bookId, currentPage, pageCount }, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/book/updatebookprogress`, {
+            const response = await fetch(`${baseurl}/api/book/updatebookprogress`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 // Pass the variables into the body
@@ -115,7 +116,7 @@ export const movingtocompleted = createAsyncThunk(
     "books/movingtocompleted",
     async ({ bookId, userId }, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/book/movingtocompleted`, {
+            const response = await fetch(`${baseurl}/api/book/movingtocompleted`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ bookId, userId })
@@ -137,7 +138,7 @@ export const completedbook = createAsyncThunk(
     async (id, { rejectWithValue }) => {
         try {
             const response = await fetch(
-                `http://localhost:3000/api/book/completedbook/${id}`
+                `${baseurl}/api/book/completedbook/${id}`
             );
 
             if (!response.ok) {
@@ -155,7 +156,7 @@ export const completedbook = createAsyncThunk(
 
 export const setbookgoal = createAsyncThunk("books/setbookgoal", async ({ userid, goalText }, { rejectWithValue }) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/book/setbookgoal`, {
+        const response = await fetch(`${baseurl}/api/book/setbookgoal`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -178,7 +179,7 @@ export const fetchUserStats = createAsyncThunk(
 
         try {
             const response = await fetch(
-                `http://localhost:3000/api/book/getUserStats/${userId}`
+                `${baseurl}/api/book/getUserStats/${userId}`
             );
 
             const data = await response.json();
@@ -207,7 +208,7 @@ export const deletbook = createAsyncThunk(
       // Function to make DELETE request
       const makeDeleteRequest = async (token) => {
         const res = await fetch(
-          `http://localhost:3000/api/book/deletebookById/${userId}/${bookid}`,
+          `${baseurl}/api/book/deletebookById/${userId}/${bookid}`,
           {
             method: "DELETE",
             headers: {
@@ -225,7 +226,7 @@ export const deletbook = createAsyncThunk(
 
       // If 401, try to refresh token
       if (res.status === 401 && refreshToken) {
-        const refreshRes = await fetch("http://localhost:3000/api/book/refresh-token", {
+        const refreshRes = await fetch(`${baseurl}/api/book/refresh-token`, {
           method: "POST",
           headers: { "Authorization": `Bearer ${refreshToken}` },
         });

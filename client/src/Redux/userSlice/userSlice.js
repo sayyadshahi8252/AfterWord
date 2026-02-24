@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+const baseurl = import.meta.env.VITE_BASE_URL;
 
 export const registeruser = createAsyncThunk(
     'users/registeruser',
     async (formData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/user/register`, {
+            const response = await fetch(`${baseurl}/api/user/register`, {
                 method: "POST",
                 body: formData
             });
@@ -26,7 +27,7 @@ export const loginuser = createAsyncThunk(
     'users/loginuser',
     async (credentials, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/user/login`, {
+            const response = await fetch(`${baseurl}/api/user/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(credentials)
