@@ -1,0 +1,206 @@
+/* ================= Container ================= */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background-color: #f9f9fb;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header Info */
+.headerInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+.count {
+  background-color: #e2e8f0;
+  color: #4a5568;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ================= Book Card ================= */
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bookCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Main Content */
+.mainContent {
+  display: flex;
+  gap: 16px;
+}
+
+.bookCover {
+  width: 110px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Top Row: Title + Pages */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.pageCount {
+  font-size: 13px;
+  color: #718096;
+}
+
+/* Author + Category */
+.authorName {
+  font-size: 14px;
+  color: #4a5568;
+  margin: 0;
+}
+
+.category {
+  font-size: 13px;
+  color: #718096;
+  font-weight: 500;
+}
+
+/* Reason Box */
+.reasonBox {
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+.quoteIcon {
+  font-size: 18px;
+  color: #3b71ca;
+}
+
+.reasonText {
+  font-size: 14px;
+  color: #4a5568;
+  flex: 1;
+}
+
+/* Meta Row */
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #718096;
+  margin-top: 4px;
+}
+
+/* ================= Action Buttons ================= */
+.actionArea {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.startBtn {
+  background-color: #3b71ca;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.startBtn:hover {
+  background-color: #1a4a99;
+}
+
+.secondaryBtn {
+  background-color: #e2e8f0;
+  color: #4a5568;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.secondaryBtn:hover {
+  background-color: #cbd5e0;
+}
+
+.iconBtn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #a0aec0;
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  color: #4a5568;
+}
+
+/* ================= Responsive ================= */
+@media screen and (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bookCover {
+    width: 100px;
+    height: 140px;
+  }
+
+  .actionArea {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .startBtn,
+  .secondaryBtn,
+  .iconBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,91 @@
+/* ================= Wrapper ================= */
+.centerWrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ================= Main Title ================= */
+.mainTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a202c; /* dark text */
+  margin-bottom: 4px;
+}
+
+.subQuote {
+  font-size: 16px;
+  color: #718096; /* lighter gray */
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* ================= Tab Navigation ================= */
+.tabNav {
+  display: flex;
+  gap: 16px;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.link, .activeLink {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #4a5568;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background-color: #edf2f7; /* subtle hover */
+}
+
+.activeLink {
+  background-color: #3b71ca;
+  color: #ffffff;
+  border-bottom: 2px solid #3b71ca;
+  font-weight: 600;
+  box-shadow: 0 -2px 6px rgba(59,113,202,0.2);
+}
+
+/* ================= Content Area ================= */
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ================= Responsive Design ================= */
+@media screen and (max-width: 1024px) {
+  .mainTitle {
+    font-size: 28px;
+  }
+  .subQuote {
+    font-size: 15px;
+  }
+  .link, .activeLink {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .centerWrapper {
+    padding: 16px 12px;
+  }
+  .mainTitle {
+    font-size: 24px;
+  }
+  .tabNav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

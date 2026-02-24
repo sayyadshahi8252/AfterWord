@@ -1,0 +1,303 @@
+/* CenterMobile.module.css */
+
+.centerMobile {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfdfd;
+}
+
+/* Welcome Banner */
+.welcomeBanner {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.bannerText h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.bannerText p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.addBookBtn {
+  padding: 8px 16px;
+  background-color: #5f2eea;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Post Card */
+.postCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+/* Header */
+.postHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+}
+
+.userThumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menuDots {
+  margin-left: auto;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Body */
+.postBody {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+}
+
+.bookThumb {
+  width: 80px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.postContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.postContent p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.textAccent {
+  width: 50px;
+  height: 3px;
+  background-color: #5f2eea;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+/* Book Details inside post */
+.bookDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.bookDetails span {
+  background-color: #f1f1f1;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Footer actions */
+.postActions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #eee;
+}
+
+.postActions span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.postActions span:hover {
+  color: #5f2eea;
+}
+
+/* Suggested Users / Reading Goals */
+.suggestionsSection {
+  margin-top: 20px;
+}
+
+.suggestedUsers h4,
+.readingGoalCard h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.userLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.userLink img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.readingGoalCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: 16px;
+}
+
+.goalStats {
+  font-size: 0.85rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.progressBg {
+  width: 100%;
+  height: 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #5f2eea;
+  border-radius: 3px;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 320px;
+}
+
+.modal h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.cancelBtn {
+  padding: 6px 12px;
+  background-color: #eee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.saveBtn {
+  padding: 6px 12px;
+  background-color: #5f2eea;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.postActions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.actionItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  position: relative;
+}
+
+.likeIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.likeCount {
+  font-weight: 600;
+  color: #334155;
+}
+
+.guestHint {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 9px;
+  color: #3b71ca;
+  background: white;
+  border: 1px solid #3b71ca;
+  padding: 2px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Add a simple scale animation for the mobile "Like" */
+.actionItem:active .likeIcon {
+  transform: scale(1.2);
+  transition: transform 0.1s ease;
+}

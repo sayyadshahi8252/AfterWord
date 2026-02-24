@@ -1,0 +1,32 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh;           /* Fixes the height to the viewport */
+  overflow: hidden;        /* Prevents the main page from scrolling */
+  background-color: #F8F9FA; /* Your preferred soft gray background */
+}
+
+/* Sidebars (Left and Right) */
+.leftbarContainer, 
+.rightContainer {
+  width: 20%;              /* Adjust width as needed */
+  height: 100vh;
+  overflow-y: auto;        /* Allows sidebar to scroll internally if content is long */
+  border-right: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+}
+
+/* Center Feed (The Scrolling Part) */
+.centerContainer {
+  flex: 1;                 /* Takes up the remaining space */
+  height: 100vh;
+  overflow-y: scroll;      /* Forces the scrollbar on the center section only */
+  
+  /* Hide scrollbar for a cleaner look while keeping functionality */
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.centerContainer::-webkit-scrollbar {
+  display: none;           /* Chrome, Safari, and Opera */
+}

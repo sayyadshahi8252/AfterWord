@@ -1,0 +1,55 @@
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #e2e8f0;
+  /* Soft shadow to separate from the main content */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #718096; /* Muted gray for secondary feel */
+  transition: all 0.2s ease;
+  flex: 1; /* Distributes space evenly */
+}
+
+.navItem img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+.navItem span {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* --- Active Item Styling --- */
+.active {
+  color: #3b71ca; /* Your specific blue color */
+}
+
+.active img {
+  opacity: 1;
+  /* Applies a blue tint to the icon if it's naturally black */
+  filter: invert(34%) sepia(85%) saturate(1455%) hue-rotate(198deg) brightness(97%) contrast(92%);
+}
+
+/* Optional: Slight feedback when tapping */
+.navItem:active {
+  transform: scale(0.92);
+  opacity: 0.8;
+}

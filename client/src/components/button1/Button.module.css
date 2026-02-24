@@ -1,0 +1,33 @@
+.button {
+    /* Background Color requested */
+    background-color: #3b71ca;
+    
+    /* Text Styling */
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    
+    /* Sizing and Spacing */
+    padding: 10px 24px; /* Better than fixed 20px height for text */
+    border: none;
+    border-radius: 4px; /* Soft rounded corners */
+    
+    /* Interactive elements */
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover state for better UX */
+.button:hover {
+    background-color: #3361ad; /* Slightly darker shade */
+    box-shadow: 0 4px 12px rgba(59, 113, 202, 0.2);
+}
+
+/* Active state (when clicked) */
+.button:active {
+    background-color: #2b5292;
+    transform: scale(0.98);
+}

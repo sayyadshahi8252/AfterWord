@@ -1,0 +1,162 @@
+/* Container */
+.statsPage {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Inter', sans-serif;
+  color: #2d3748;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 16px;
+}
+
+/* -------------------- Yearly Goal Card -------------------- */
+.goalCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.goalInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.goalLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.goalCount {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b6cb0;
+}
+
+.fullBar {
+  width: 100%;
+  height: 12px;
+  background-color: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fillBar {
+  height: 12px;
+  background-color: #2b6cb0;
+  border-radius: 6px;
+  transition: width 0.4s ease-in-out;
+}
+
+.goalStatus {
+  font-size: 14px;
+  color: #718096;
+  margin-top: 8px;
+  text-align: right;
+}
+
+/* -------------------- Genre Breakdown -------------------- */
+.chartCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 12px;
+}
+
+.genreList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.genreItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.genreMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.barBg {
+  height: 8px;
+  background-color: #edf2f7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 8px;
+  background-color: #4299e1;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* -------------------- Pie Chart & Recharts -------------------- */
+.recharts-wrapper {
+  margin-top: 12px;
+}
+
+.recharts-legend-item text {
+  font-size: 12px !important;
+}
+
+/* -------------------- No Data Placeholder -------------------- */
+.noData {
+  font-size: 14px;
+  color: #a0aec0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* -------------------- Responsive -------------------- */
+@media screen and (max-width: 768px) {
+  .statsPage {
+    padding: 16px;
+    gap: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+
+  .goalCard,
+  .chartCard {
+    padding: 16px;
+  }
+
+  .fullBar {
+    height: 10px;
+  }
+
+  .fillBar {
+    height: 10px;
+  }
+}

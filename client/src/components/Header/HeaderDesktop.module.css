@@ -1,0 +1,224 @@
+/* ================= Container ================= */
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ================= Left Section: Logo + Nav ================= */
+.firtstContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logodetail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logodetail img {
+  width: 36px;
+  height: 36px;
+}
+
+.headerTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3b71ca;
+  margin: 0;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.headerTitle:hover {
+  color: #1a4a99; /* Slightly darker on hover */
+}
+
+/* ================= Navigation Links ================= */
+.ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.li {
+  position: relative;
+}
+
+.navLink {
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d3748;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+/* Hover underline animation */
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3b71ca;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: #3b71ca;
+}
+
+/* Active NavLink underline */
+.active::after {
+  width: 100%;
+}
+
+.active {
+  color: #3b71ca;
+}
+
+/* ================= Right Section: Search + Icons + Login ================= */
+.secondContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Searchbar wrapper (if you want to style Searchbar) */
+.searchbar-container {
+  width: 300px; /* Adjust as needed */
+}
+
+/* Notification bell */
+.icon-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: #e53e3e; /* Red notification dot */
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+/* Login/Logout Button */
+.loginBtn {
+  padding: 6px 16px;
+  border: 1px solid #3b71ca;
+  border-radius: 6px;
+  color: #3b71ca;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loginBtn:hover {
+  background-color: #3b71ca;
+  color: white;
+}
+
+/* Profile Image */
+/* Profile wrapper ensures the image stays in a circle */
+.profile-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;       /* Makes the container circular */
+  overflow: hidden;         /* Ensures image is clipped */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  background-color: #f0f0f0; /* optional, in case image has transparent areas */
+}
+
+/* The image inside wrapper */
+.round-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;      /* Also round the image itself */
+  object-fit: cover;       /* Fill the circle without distortion */
+  display: block;          /* Remove inline spacing issues */
+  transition: transform 0.2s ease;
+}
+
+.round-image:hover {
+  transform: scale(1.1);   /* Optional hover zoom effect */
+}
+
+/* Logo as NavLink */
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Keep the logo text color */
+}
+
+.logoLink:hover .headerTitle {
+  color: #1a4a99; /* Slight hover effect on text */
+}
+
+
+/* ================= Responsive Tweaks ================= */
+@media screen and (max-width: 1200px) {
+  .ul {
+    gap: 16px;
+  }
+  .secondContainer {
+    gap: 16px;
+  }
+  .searchbar-container {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mainContainer {
+    padding: 12px 24px;
+  }
+  .headerTitle {
+    font-size: 20px;
+  }
+  .navLink {
+    font-size: 14px;
+  }
+  .searchbar-container {
+    width: 180px;
+  }
+}
+

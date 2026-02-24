@@ -1,0 +1,65 @@
+/* Main wrapper that locks everything into the mobile screen */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.homeMobileWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #F8F9FA; /* Your preferred soft gray */
+  overflow: hidden; /* Prevents the body from bouncing */
+  position: relative;
+}
+
+/* Fixed Header: Clamped to the absolute top */
+.headerFixed {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  /* Fixed height to match the internal HeaderMobile components */
+  height: 110px; 
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); /* Subtle separation */
+}
+
+/* Scrollable Main Content */
+.scrollableContent {
+  flex: 1;
+  /* margin-top MUST match .headerFixed height exactly to remove the gap */
+  /* margin-top: 110px;  */
+  background-color: #F8F9FA; 
+  overflow-y: auto;
+  
+  /* The internal gap you wanted after the header before content starts */
+  padding: 20px 12px 80px 12px; 
+  
+  /* Smooth scrolling for a native app feel */
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 120px;
+}
+
+.scrollableContent::-webkit-scrollbar {
+  display: none;
+}
+
+.footerFixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 65px;
+  background-color: #ffffff;
+}
+
+/* Spacer used in HomeMobile.jsx if extra top separation is needed */
+.topSpacer {
+  height: 10px;
+  width: 100%;
+}

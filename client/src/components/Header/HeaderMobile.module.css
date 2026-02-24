@@ -1,0 +1,138 @@
+/* Container */
+.mainContainer {
+  padding: 12px 16px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Top Row */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Section */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logoImage {
+  width: 28px;
+  height: 28px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 700;
+  color: #3b71ca; /* Main brand color */
+  transition: color 0.2s;
+}
+
+.logoSection:hover .logoText {
+  color: #1a4a99; /* Darker shade on hover */
+}
+
+/* Action Icons */
+.actionIcons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Notification Bell */
+.notificationWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bellIcon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: #e53e3e;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+/* Profile Image */
+.profileImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.profileImage:hover {
+  transform: scale(1.1);
+}
+
+/* Search Bar */
+.searchRow {
+  width: 100%;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5fb;
+  border: 1px solid #d1d9ee;
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  opacity: 0.6;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Login/Logout Button */
+.loginBtn {
+  padding: 4px 12px;
+  border: 1px solid #3b71ca; /* Brand color */
+  border-radius: 6px;
+  color: #3b71ca;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loginBtn:hover {
+  background-color: #3b71ca;
+  color: #ffffff;
+}
+
+/* Prevent shrinking */
+.bellIcon, .profileImage {
+  flex-shrink: 0;
+}

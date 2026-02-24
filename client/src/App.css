@@ -1,0 +1,91 @@
+/* ================= General Reset ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  background-color: #f8f9fa;
+}
+
+/* ================= Header Visibility ================= */
+/* Desktop header visible only on large screens */
+.desktop-header-only {
+  display: block;
+}
+
+.mobile-header-only {
+  display: none;
+}
+
+/* ================= Main content container ================= */
+.main-content {
+  padding: 16px;
+  min-height: calc(100vh - 80px); /* Adjust based on header height */
+}
+
+/* ================= Responsive Breakpoints ================= */
+@media screen and (max-width: 768px) {
+  .desktop-header-only {
+    display: none;
+  }
+
+  .mobile-header-only {
+    display: block;
+  }
+
+  .main-content {
+    padding: 12px;
+    min-height: calc(100vh - 70px); /* Slightly smaller header on mobile */
+  }
+}
+
+/* ================= Optional Page Wrappers ================= */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ================= Buttons ================= */
+button, .btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:disabled, .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ================= Links ================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= Scrollbar Styling ================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b71ca;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a5090;
+}
+
+

@@ -1,0 +1,378 @@
+.exploreWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  background-color: #ffffff;
+}
+
+.exploreHeader {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: #f1f3f4;
+  padding: 12px 20px;
+  border-radius: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.searchBar:focus-within {
+  background: #fff;
+  border-color: #3b71ca;
+  box-shadow: 0 4px 12px rgba(59, 113, 202, 0.1);
+}
+
+.searchIcon {
+  margin-right: 12px;
+  opacity: 0.5;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+  color: #1a1a1a;
+}
+
+/* --- THE BOOK GRID --- */
+
+.bookGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.bookCard {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.bookCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #3b71ca;
+}
+
+.coverContainer {
+  position: relative;
+  aspect-ratio: 2/3;
+  background: #f9f9f9;
+  overflow: hidden;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.bookCard:hover .coverImg {
+  transform: scale(1.05);
+}
+
+.genreBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #3b71ca;
+  color: white;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.info {
+  padding: 12px;
+}
+
+.bookTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* --- ACTION BUTTONS --- */
+
+.actionGroup {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.readMoreBtn {
+  flex: 1;
+  background: #f1f3f4;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.readMoreBtn:hover {
+  background: #e8eaed;
+  color: #1a1a1a;
+}
+
+.addBtnSmall {
+  width: 36px;
+  height: 33px;
+  background-color: white;
+  color: #3b71ca;
+  border: 1.5px solid #3b71ca;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addBtnSmall:hover {
+  background-color: #3b71ca;
+  color: white;
+}
+
+/* --- MODAL (POPUP) STYLES --- */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px); /* Glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2500;
+  padding: 20px;
+}
+
+.modalContent {
+  background: white;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  animation: modalSlideUp 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 10;
+}
+
+.modalBody {
+  display: flex;
+  padding: 32px;
+  gap: 32px;
+}
+
+.modalCover {
+  width: 180px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.modalInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalGenre {
+  font-size: 11px;
+  font-weight: 800;
+  color: #3b71ca;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.modalAuthor {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.modalStats {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 24px;
+}
+
+.modalDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+.modalAddBtn {
+  margin-top: auto;
+  background-color: #3b71ca;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modalAddBtn:hover {
+  transform: scale(1.02);
+}
+
+.noScroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.footerNote {
+  text-align: center;
+  padding: 60px 0;
+  color: #bbb;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 100px 0; /* Extra bottom padding for breathing room */
+}
+
+.loadMoreBtn {
+  background-color: #ffffff;
+  color: #3b71ca; /* Your brand blue */
+  border: 2px solid #3b71ca;
+  padding: 14px 32px;
+  border-radius: 50px; /* Pill shape for a modern feel */
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(59, 113, 202, 0.08);
+}
+
+.loadMoreBtn:hover {
+  background-color: #3b71ca;
+  color: #ffffff;
+  transform: translateY(-3px); /* Subtle lift */
+  box-shadow: 0 8px 20px rgba(59, 113, 202, 0.2);
+}
+
+.loadMoreBtn:active {
+  transform: translateY(-1px);
+}
+
+/* Optional: Style for when the button is loading more data */
+.loadMoreBtn:disabled {
+  background-color: #f1f3f4;
+  border-color: #e8eaed;
+  color: #999;
+  cursor: not-allowed;
+  transform: none;
+}
+/* --- MOBILE TWEAKS --- */
+
+@media (max-width: 600px) {
+  .bookGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .modalBody {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modalCover {
+    width: 140px;
+  }
+
+  .modalStats {
+    justify-content: center;
+  }
+
+  .title { font-size: 22px; }
+}

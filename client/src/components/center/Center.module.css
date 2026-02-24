@@ -1,0 +1,251 @@
+/* Container */
+.center {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fdfdfd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Add Book Banner */
+.addbook {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.addbook h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.addbook p.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.addbookbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.addBookBtn {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.addBookBtn:hover {
+  background-color: #357ab7;
+}
+
+/* Post Card */
+.maincontainer {
+  background-color: #fff;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Header */
+.partone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.profileimage {
+  display: flex;
+  gap: 12px;
+}
+
+.profileWrapper {
+  position: relative;
+}
+
+.profileWrapper img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.statusDot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #4caf50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.headerText p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.userName {
+  font-weight: 600;
+  color: #222;
+}
+
+.actionText {
+  color: #555;
+}
+
+.bookTitle {
+  font-weight: 700;
+  color: #4a90e2;
+}
+
+.bookCategory {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.threedot button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #999;
+}
+
+/* Content */
+.parttwo {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.bookImage {
+  width: 120px;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.postText {
+  flex: 1;
+}
+
+.postText p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.bookDetails {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.bookDetails span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Text underline */
+.textUnderline {
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  margin-top: 8px;
+}
+
+/* Footer */
+.postFooter {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+}
+
+.footerItem {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footerItem:hover {
+  color: #4a90e2;
+}
+.postFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid #eee;
+  margin-top: 12px;
+}
+.likeContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.likeContainer:hover {
+  transform: scale(1.08);
+}
+
+.likeIcon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.likeCount {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+.likeContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.loginToLike {
+  font-size: 10px;
+  color: #3b71ca;
+  position: absolute;
+  bottom: -15px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.likeContainer:hover .loginToLike {
+  opacity: 1; /* Show message when a guest hovers */
+}

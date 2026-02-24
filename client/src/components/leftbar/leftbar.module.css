@@ -1,0 +1,170 @@
+/* ================= Leftbar Container ================= */
+.leftbar {
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  position: sticky;
+  top: 0;
+  transition: width 0.3s ease;
+}
+
+/* ================= Profile Section ================= */
+.profilesection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+  margin-bottom: 30px;
+}
+
+.profileWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 2px solid #3b71ca;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profileWrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 113, 202, 0.15);
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.username {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  text-align: center;
+}
+
+/* ================= Navigation Links ================= */
+.navlinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.listitem {
+  width: 100%;
+  padding: 4px 16px;
+  box-sizing: border-box;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #64748b; /* Muted Slate color */
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  background-color: #f1f5f9;
+  color: #3b71ca;
+  transform: translateX(4px);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: filter 0.2s ease;
+}
+
+/* Active State */
+.active {
+  background-color: #eff6ff;
+  color: #3b71ca !important;
+  font-weight: 700;
+}
+
+/* Filter to turn icon blue when active */
+.active .icon {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(56%) saturate(1000%) hue-rotate(200deg);
+}
+
+/* ================= Secondary Section (Saved/Bookmarks) ================= */
+.divider {
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 20px 24px;
+}
+
+.savedLabel {
+  font-size: 14px;
+}
+
+/* ================= Responsive Design ================= */
+
+/* Tablets/Small Desktops */
+@media screen and (max-width: 1024px) {
+  .leftbar {
+    width: 220px;
+  }
+  
+  .profileWrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .username {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Devices (Icon-only sidebar) */
+@media screen and (max-width: 768px) {
+  .leftbar {
+    width: 80px;
+    padding: 20px 8px;
+  }
+
+  .profilesection {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .username, .navLink span, .divider {
+    display: none; /* Hide text and divider for minimal look */
+  }
+
+  .profileWrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .listitem {
+    padding: 4px;
+  }
+
+  .navLink {
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
